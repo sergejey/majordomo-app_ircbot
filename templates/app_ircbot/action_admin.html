@@ -1,0 +1,78 @@
+<form action="?" method="post" enctype="multipart/form-data" name="frmEdit" class="form-horizontal">
+<fieldset>
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_SERVER#] style="color:red;font-weight:bold"[#endif#]>
+ Server:
+ (*)
+ </label>
+ <div class="controls"><input type="text" name="server" value="<#SERVER#>" class="input"></div>
+</div>
+
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_PORT#] style="color:red;font-weight:bold"[#endif#]>
+ Port:
+ (*)
+ </label>
+ <div class="controls"><input type="text" name="port" value="<#PORT#>" class="input"></div>
+</div>
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_ENCODING#] style="color:red;font-weight:bold"[#endif#]>
+ Encoding:
+ (*)
+ </label>
+ <div class="controls"><input type="text" name="encoding" value="<#ENCODING#>" class="input"> (<b>UTF-8</b> <#LANG_DEFAULT#>)</div>
+</div>
+
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_CHANNEL#] style="color:red;font-weight:bold"[#endif#]>
+ Channel:
+ (*)
+ </label>
+ <div class="controls"><input type="text" name="channel" value="<#CHANNEL#>" class="input"></div>
+</div>
+
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_NAME#] style="color:red;font-weight:bold"[#endif#]>
+ Name:
+ (*)
+ </label>
+ <div class="controls"><input type="text" name="name" value="<#NAME#>" class="input"></div>
+</div>
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_NICK#] style="color:red;font-weight:bold"[#endif#]>
+ Nick:
+ (*)
+ </label>
+ <div class="controls"><input type="text" name="nick" value="<#NICK#>" class="input"></div>
+</div>
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_PASS#] style="color:red;font-weight:bold"[#endif#]>
+ Password:
+ </label>
+ <div class="controls"><input type="text" name="pass" value="<#PASS#>" class="input"></div>
+</div>
+
+<div class="form-group">
+ <label class="control-label"[#if ERR_ADMINS#] style="color:red;font-weight:bold"[#endif#]>
+ Admins:
+ </label>
+ <div class="controls"><input type="text" name="admins" value="<#ADMINS#>" class="input"></div>
+</div>
+
+
+
+<div class="form-actions">
+<button type="submit" name="subm" value="Submit" class="btn btn-primary"><#LANG_UPDATE#></button>
+<input type="hidden" name="view_mode" value="update_settings">
+<input type="hidden" name="mode" value="update">
+</div>
+</fieldset>
+</form>
+
