@@ -26,6 +26,7 @@ class majordomoPlugin extends basePlugin {
         }
 
         public function tick() {
+         global $config;
          if ((time()-$this->last_check)>3) {
           $queue_data=getGlobal('IRCBot1.pushMessage');
           $this->last_check=time();
@@ -40,12 +41,19 @@ class majordomoPlugin extends basePlugin {
            }
           }
           setGlobal('cycle_app_ircbotRun', time(), 1);
+
+          if (file_exists('./reboot'))   {      
+           global $db;        
+           $db->Disconnect();      
+           exit;   
+          }
+
          }
         }
 
 
         public function onMessage($from, $channel, $msg) {
-
+         global $config;
          if ($from!='' || $channel!='') {
           global $irc;
           $irc->processIncomingMessage(array('message'=>iconv($config['encoding'], 'UTF-8', $msg), 'from'=>iconv($config['encoding'], 'UTF-8', $from), 'channel'=>iconv($config['encoding'], 'UTF-8', $channel)));
