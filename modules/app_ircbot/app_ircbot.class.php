@@ -173,7 +173,7 @@ function admin(&$out) {
   }
 
 
-  $this->config['CHANNEL']=$chennel;
+  $this->config['CHANNEL']=$channel;
   if (!$this->config['CHANNEL']) {
    $this->config['CHANNEL']='MajorDoMo';
   }
