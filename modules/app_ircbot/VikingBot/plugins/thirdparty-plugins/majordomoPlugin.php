@@ -56,7 +56,10 @@ class majordomoPlugin extends basePlugin {
          global $config;
          if ($from!='' || $channel!='') {
           global $irc;
-          $irc->processIncomingMessage(array('message'=>iconv($config['encoding'], 'UTF-8', $msg), 'from'=>iconv($config['encoding'], 'UTF-8', $from), 'channel'=>iconv($config['encoding'], 'UTF-8', $channel)));
+          $data=$irc->processIncomingMessage(array('message'=>iconv($config['encoding'], 'UTF-8', $msg), 'from'=>iconv($config['encoding'], 'UTF-8', $from), 'channel'=>iconv($config['encoding'], 'UTF-8', $channel)));
+          if ($data) {
+           sendMessage($this->socket, $channel, $from.': '.iconv('UTF-8', $config['encoding'], $data));
+          }
          }
 
         }

@@ -130,7 +130,7 @@ function processSubscription($event, $details='') {
 
 function processIncomingMessage($data) {
  //DebMes("IRCBot: ".serialize($data));
- callMethod('IRCBot1.onNewMessage', array('message'=>$data['message'], 'channel'=>$data['channel'], 'from'=>$data['from']));
+ return callMethod('IRCBot1.onNewMessage', array('message'=>$data['message'], 'channel'=>$data['channel'], 'from'=>$data['from']));
 }
 
 /**
